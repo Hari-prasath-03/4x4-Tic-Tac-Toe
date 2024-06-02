@@ -7,6 +7,21 @@
     animation: circleAnimation .5s linear;
 }
 
+@media(max-width: 420px) {
+    .circle {
+        height: 67px;
+        width: 67px;
+    }
+}
+
+@media(max-width: 375px) {
+    .circle {
+        height: 64px;
+        width: 64px;
+    }
+}
+
+
 @keyframes circleAnimation {
     from {
         transform: scale(0.1);

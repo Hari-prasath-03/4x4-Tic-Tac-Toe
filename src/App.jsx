@@ -132,7 +132,7 @@ function App() {
       </div>
       <div className="buttons">
         <button onClick={restart}>New Game</button>
-        <ToastMsg startAIGame={startAIGame} />
+        <ToastMsg startAIGame={startAIGame} restart={restart} />
       </div>
     </div>
   );

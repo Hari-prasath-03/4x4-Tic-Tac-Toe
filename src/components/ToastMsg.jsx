@@ -2,10 +2,10 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function ToastMsg({startAIGame}) {
+function ToastMsg({startAIGame, restart}) {
     return (
         <div>
-            <button onClick={() => {toast.error("Win, If you Can 😈"); startAIGame()}}>
+            <button onClick={() => {restart();toast.error("Win, If you Can 😈"); startAIGame()}}>
             Play with AI</button>
             <ToastContainer  />
         </div>
