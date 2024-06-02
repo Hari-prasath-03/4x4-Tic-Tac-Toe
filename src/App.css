@@ -97,6 +97,38 @@
     transform: scale(0.8);
 }
 
+footer {
+    text-align: center;
+    position: sticky;
+    bottom: 80px;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+}
+
+footer p {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: footerP 5s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes footerP {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+
+footer span {
+    font-weight: bold;
+}
+
 @media(max-width: 487px) {
     .game-board {
         max-width: 460px;

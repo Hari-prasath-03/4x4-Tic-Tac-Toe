@@ -101,40 +101,47 @@ function App() {
   };
 
   return (
-    <div className={`game-page ${aiMode ? `aimode` : ``}`}>
-      {winner && <Confetti />}
-      <div></div>
-      <div className="game-board">
-        <div className="game-title">
-          <h2>
-            {winner
-              ? aiMode
-                ? winner === 1
-                  ? "You Win"
-                  : "I Win"
-                : `Player ${winner} wins`
-              : isDraw
-              ? "Match Tie"
-              : isFirstMove
-              ? aiMode
-                ? "Let's Start with you"
-                : "Let's Start"
-              : currPlayer
-              ? aiMode
-                ? "Your move"
-                : "Player1's Turn"
-              : aiMode
-              ? "Wait now I'm"
-              : "Player2's Turn"}
-          </h2>
+    <>
+      <div className={`game-page ${aiMode ? `aimode` : ``}`}>
+        {winner && <Confetti />}
+        <div></div>
+        <div className="game-board">
+          <div className="game-title">
+            <h2>
+              {winner
+                ? aiMode
+                  ? winner === 1
+                    ? "You Win"
+                    : "I Win"
+                  : `Player ${winner} wins`
+                : isDraw
+                ? "Match Tie"
+                : isFirstMove
+                ? aiMode
+                  ? "Let's Start with you"
+                  : "Let's Start"
+                : currPlayer
+                ? aiMode
+                  ? "Your move"
+                  : "Player1's Turn"
+                : aiMode
+                ? "Wait now I'm"
+                : "Player2's Turn"}
+            </h2>
+          </div>
+          {initilizeBoard(16)}
         </div>
-        {initilizeBoard(16)}
+        <div className="buttons">
+          <button onClick={restart}>New Game</button>
+          <ToastMsg startAIGame={startAIGame} restart={restart} />
+        </div>
       </div>
-      <div className="buttons">
-        <button onClick={restart}>New Game</button>
-        <ToastMsg startAIGame={startAIGame} restart={restart} />
-      </div>
-    </div>
+      <footer>
+        <p>
+          Developed by <span>Hari prasath K</span>
+        </p>
+      </footer>
+    </>
   );
 }
 
